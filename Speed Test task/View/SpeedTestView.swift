@@ -6,16 +6,11 @@
 //
 
 import UIKit
-protocol SpeedTestDelegate {
-    func updateUI(with percent: CGFloat)
-}
 
 @IBDesignable
 class SpeedTestView: UIView {
     var percent: CGFloat = 0
     var button = UIButton()
-   
-    var delegate: SpeedTestDelegate?
     
     override func draw(_ rect: CGRect) {
         
@@ -46,7 +41,7 @@ class SpeedTestView: UIView {
         buttonCircleLayer.shadowOffset = CGSize(width: 0, height: 2)
         buttonCircleLayer.shadowRadius = 4
         
-        button = UIButton(frame: CGRect(x: buttonCirlceFrame, y: buttonCircleRadius + 20 - buttonCircleRadius , width: buttonCircleRadius * 2, height: buttonCircleRadius * 2))
+        button = UIButton(frame: CGRect(x: 0, y: 0, width: buttonCircleRadius * 2, height: buttonCircleRadius * 2))
         button.center = center
         button.layer.cornerRadius = buttonCircleRadius
         button.setTitle("START", for: .normal)
@@ -109,17 +104,22 @@ class SpeedTestView: UIView {
         circleLayer.shadowOpacity = 1
         circleLayer.shadowOffset = CGSize(width: 0, height: 2)
         circleLayer.shadowRadius = 4
-
+        
+        layer.addSublayer(buttonCircleLayer)
         layer.addSublayer(defaultCircleLayer)
         layer.addSublayer(circleLayer)
         layer.addSublayer(barsLayer)
-        layer.addSublayer(buttonCircleLayer)
         buttonCircleLayer.addSublayer(button.layer)
         addSubview(button)
     }
     
     @objc func startButtonTapped() {
-        print("Start button tapped")
-        delegate?.updateUI(with: percent)
+        percent += 0.1
+        DispatchQueue.main.async {
+            self.setNeedsDisplay()
+        }
+        if percent >= 1 {
+            percent = 0
+        }
     }
 }

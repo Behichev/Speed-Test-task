@@ -120,16 +120,16 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="146" translatesAutoresizingMaskIntoConstraints="NO" id="1bB-SF-3R5">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="113" translatesAutoresizingMaskIntoConstraints="NO" id="1bB-SF-3R5">
                                                 <rect key="frame" x="0.0" y="79" width="321" height="14.333333333333329"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Connect type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay4-ax-vPS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="14.333333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdW-Iq-Kuw">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdW-Iq-Kuw">
                                                         <rect key="frame" x="315.33333333333331" y="0.0" width="5.6666666666666856" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" red="0.45098039220000002" green="0.45882352939999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,8 +205,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectTypeResultLabel" destination="AdW-Iq-Kuw" id="i6y-XJ-zCC"/>
+                        <outlet property="downladResultLabel" destination="mgP-iy-EeU" id="LIi-QL-eab"/>
+                        <outlet property="ipAdressResultLabel" destination="Wxj-qy-Kpu" id="Iwc-gH-cPq"/>
+                        <outlet property="pingResultLabel" destination="guW-q1-yR5" id="jVH-yO-HfG"/>
+                        <outlet property="providerResultLabel" destination="zVb-mW-hUY" id="VcB-e8-ul4"/>
                         <outlet property="resultView" destination="hn3-oQ-F5b" id="Iq4-fB-LTX"/>
                         <outlet property="speedTestView" destination="bQW-pA-Hwk" id="qcN-G4-KKr"/>
+                        <outlet property="uploadResultLabel" destination="PGV-wb-ylq" id="huS-89-bKp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
